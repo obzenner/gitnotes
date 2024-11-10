@@ -75,6 +75,7 @@ h1 {
   color: #b294bb;
   font-weight: bold;
   margin: 0 0 4px;
+  display: none;
 }
 
 /* Note date styling */

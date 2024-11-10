@@ -1,6 +1,6 @@
 // src/main.js
 async function loadNotes() {
-  const response = await fetch("public/commits.json");
+  const response = await fetch("public/notes.json");
   const commits = await response.json();
 
   const notesContainer = document.getElementById("notesContainer");
