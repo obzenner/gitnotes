@@ -1,0 +1,101 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+venv.bak/
+venv.bak/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+target/
+build/
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+.config/
+coverage/
+InstalledFiles
+pkg/
+spec/reports/
+test/tmp/
+test/version_tmp/
+tmp/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+vendor/
+
+# Rust
+/target/
+**/*.rs.bk
+
+# C/C++
+*.out
+*.o
+*.obj
+*.elf
+*.lo
+*.la
+*.al
+*.libs
+*.a
+*.lai
+*.lao
+*.so
+*.so.*
+*.dylib
+*.dll
+*.dll.*
+*.exe
+*.exe.*
+*.out
+*.app
+*.i
+*.ii
+*.s
+*.su
+*.swp
+*.swo
+*.swn
+*.d
+*.d.*

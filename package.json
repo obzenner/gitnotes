@@ -1,0 +1,17 @@
+{
+  "name": "gitnotes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "node scripts/generateNotes.js",
+    "build": "echo 'Build complete'",
+    "start": "node scripts/generateNotes.js && live-server public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
