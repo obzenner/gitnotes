@@ -1,8 +1,8 @@
 #! /bin/bash
 
 # Define allowed categories, file types, and standard commit types
-allowed_categories=$(jq -r '.allowedCategories | join("|")' ./scripts/commit-config.json)
-allowed_file_types=$(jq -r '.allowedFileTypes | join("|")' ./scripts/commit-config.json)
+allowed_categories=$(jq -r '.allowedCategories | join("|")' ./src/commit-config.json)
+allowed_file_types=$(jq -r '.allowedFileTypes | join("|")' ./src/commit-config.json)
 standard_commit_types="feat|feature|fix|hotfix|build|refactor|docs|test|chore|style|perf|ci"
 
 # Get the commit message
