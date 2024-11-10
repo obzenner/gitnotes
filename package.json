@@ -13,8 +13,5 @@
   "description": "",
   "dependencies": {
     "live-server": "^1.2.2"
-  },
-  "devDependencies": {
-    "chalk": "^5.3.0"
   }
 }
