@@ -1,11 +1,15 @@
-// src/main.js
 async function loadNotes() {
+  // Fetch categories from commit-config.json
+  const configResponse = await fetch("commit-config.json");
+  const config = await configResponse.json();
+  const availableCategories = config.allowedCategories;
+
+  // Clone and create filter container
+  createCategoryFilter(availableCategories);
+
+  // Fetch notes data
   const response = await fetch("public/notes.json");
   const commits = await response.json();
-
-  const notesContainer = document.getElementById("notesContainer");
-  const noteTemplate = document.getElementById("noteTemplate").content;
-  const categoryTemplate = document.getElementById("categoryTemplate").content;
 
   // Function to convert basic Markdown to HTML
   function parseMarkdown(content) {
@@ -24,44 +28,113 @@ async function loadNotes() {
     return acc;
   }, {});
 
-  // Render grouped notes
-  for (const [category, notes] of Object.entries(groupedNotes)) {
-    // Clone and populate category template
-    const categoryElement = document.importNode(categoryTemplate, true);
-    const categoryHeader = categoryElement.querySelector(".category-header");
-    categoryHeader.textContent = category;
+  // Render notes based on selected categories
+  function renderNotes(selectedCategories) {
+    const notesContainer = document.getElementById("notesContainer");
+    notesContainer.innerHTML = ""; // Clear current notes
 
-    // Apply category-specific background color class
-    categoryElement.querySelector(".category-section").classList.add(
-      category.toLowerCase() || "default-category"
-    );
+    for (const [category, notes] of Object.entries(groupedNotes)) {
+      if (!selectedCategories.includes(category)) continue; // Skip unselected categories
 
-    const notesList = categoryElement.querySelector(".notes-list");
+      // Clone and populate category template
+      const categoryTemplate = document.getElementById("categoryTemplate").content;
+      const categoryElement = document.importNode(categoryTemplate, true);
+      const categoryHeader = categoryElement.querySelector(".category-header");
+      categoryHeader.textContent = category;
 
-    notes.forEach((note) => {
-      const { title, date, content, fileType } = note;
+      // Apply category-specific background color class
+      categoryElement.querySelector(".category-section").classList.add(
+        category.toLowerCase() || "default-category"
+      );
 
-      // Clone the note template and populate it
-      const noteElement = document.importNode(noteTemplate, true);
-      noteElement.querySelector(".note-title").textContent = title;
-      noteElement.querySelector(".note-date").textContent = date;
+      const notesList = categoryElement.querySelector(".notes-list");
 
-      // Add file type as a tag
-      const fileTypeTag = noteElement.querySelector(".file-type-tag");
-      fileTypeTag.textContent = fileType;
-      fileTypeTag.classList.add(fileType.toLowerCase() || "default-file-type");
+      notes.forEach((note) => {
+        const { title, date, content, fileType } = note;
 
-      // Convert and insert parsed Markdown as HTML
-      const parsedContent = parseMarkdown(content);
-      noteElement.querySelector(".note-content").innerHTML = parsedContent;
+        // Clone the note template and populate it
+        const noteTemplate = document.getElementById("noteTemplate").content;
+        const noteElement = document.importNode(noteTemplate, true);
+        noteElement.querySelector(".note-title").textContent = title;
+        noteElement.querySelector(".note-date").textContent = date;
 
-      // Append the populated note to the notes list for this category
-      notesList.appendChild(noteElement);
+        // Add file type as a tag
+        const fileTypeTag = noteElement.querySelector(".file-type-tag");
+        fileTypeTag.textContent = fileType;
+        fileTypeTag.classList.add(fileType.toLowerCase() || "default-file-type");
+
+        // Convert and insert parsed Markdown as HTML
+        const parsedContent = parseMarkdown(content);
+        noteElement.querySelector(".note-content").innerHTML = parsedContent;
+
+        // Append the populated note to the notes list for this category
+        notesList.appendChild(noteElement);
+      });
+
+      // Append the populated category section to the main container
+      notesContainer.appendChild(categoryElement);
+    }
+  }
+
+  // Create filter UI for categories with "Deselect All" functionality
+  function createCategoryFilter(categories) {
+    const filterContainerTemplate = document.getElementById("filterContainerTemplate").content;
+    const filterContainer = document.importNode(filterContainerTemplate, true);
+    const filterOptions = filterContainer.querySelector(".filter-options");
+    const toggleSelectButton = filterContainer.querySelector("#toggleSelectButton");
+
+    // Event listener for the Deselect/Select All button
+    toggleSelectButton.addEventListener("click", () => {
+      const checkboxes = filterOptions.querySelectorAll("input[type='checkbox']");
+      const allSelected = Array.from(checkboxes).every(checkbox => checkbox.checked);
+      checkboxes.forEach(checkbox => checkbox.checked = !allSelected);
+      
+      const selectedCategories = Array.from(
+        filterOptions.querySelectorAll("input[type='checkbox']:checked")
+      ).map(checkbox => checkbox.value);
+
+      // Update button text based on selection
+      toggleSelectButton.textContent = allSelected ? "Select All" : "Deselect All";
+
+      renderNotes(selectedCategories);
     });
 
-    // Append the populated category section to the main container
-    notesContainer.appendChild(categoryElement);
+    // Create checkboxes for each category
+    categories.forEach((category) => {
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.id = category;
+      checkbox.value = category;
+      checkbox.checked = true; // Check all by default
+
+      const label = document.createElement("label");
+      label.htmlFor = category;
+      label.textContent = category;
+
+      checkbox.addEventListener("change", () => {
+        const selectedCategories = Array.from(
+          filterOptions.querySelectorAll("input[type='checkbox']:checked")
+        ).map(checkbox => checkbox.value);
+
+        renderNotes(selectedCategories);
+
+        // Update button text based on selection state
+        const allSelected = selectedCategories.length === categories.length;
+        toggleSelectButton.textContent = allSelected ? "Deselect All" : "Select All";
+      });
+
+      filterOptions.appendChild(checkbox);
+      filterOptions.appendChild(label);
+    });
+
+    // Append the filter container to the body
+    document.body.insertBefore(filterContainer, document.getElementById("notesContainer"));
   }
+
+  // Initially render all notes
+  const initialCategories = availableCategories; // Show all categories initially
+  renderNotes(initialCategories);
 }
 
+// Call the loadNotes function
 loadNotes();

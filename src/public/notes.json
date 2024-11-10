@@ -1,9 +1,23 @@
 [
   {
-    "date": "2024-11-10T21:41:18.857Z",
+    "date": "2024-11-10T21:51:17.827Z",
     "category": "ai",
     "fileType": "courses",
     "title": "amazon-bedrock",
     "content": "# AI: Serverless Agentic Workflows with Amazon Bedrock\n\n## Link\n- [AI: Serverless Agentic Workflows with Amazon Bedrock](https://www.deeplearning.ai/short-courses/serverless-agentic-workflows-with-amazon-bedrock/)"
+  },
+  {
+    "date": "2024-11-10T22:22:34.846Z",
+    "category": "ai",
+    "fileType": "video",
+    "title": "perplexity-ui-age-of-ai",
+    "content": "# Building user interfaces in the age of AI (Perplexity)\n\n- [Building user interfaces in the age of AI](https://www.youtube.com/watch?v=dqVL7mdTrlA&t=1s)"
+  },
+  {
+    "date": "2024-11-10T22:17:17.863Z",
+    "category": "music",
+    "fileType": "album",
+    "title": "gojira-lenfantsavage",
+    "content": "# Gojira - L'Enfant Sauvage\n\n## Album Info\n[L'Enfant Sauvage](https://www.youtube.com/watch?v=BGHlZwMYO9g)"
   }
 ]

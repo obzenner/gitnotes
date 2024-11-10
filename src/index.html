@@ -6,6 +6,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Filter container for category checkboxes -->
+  <template id="filterContainerTemplate">
+    <div id="filterContainer" class="filter-container">
+      <h3>Filter by Category</h3>
+      <button id="toggleSelectButton">Deselect All</button>
+      <div class="filter-options"></div>
+    </div>
+  </template>
+
   <div id="notesContainer"></div>
 
   <!-- Template for each note -->
