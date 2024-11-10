@@ -1,0 +1,27 @@
+#! /bin/bash
+
+# Define allowed categories, file types, and standard commit types
+allowed_categories="ai|web|backend|frontend|data|cloud|infra|security|ml|dl|music|art|literature|culture|video|gaming|podcast|film|design|devops|blockchain|ux|ui|devrel|opensource|edtech|fintech"
+allowed_file_types="courses|notes|projects|tutorials|guides|articles|research|blog|podcast|track|album|playlist|interview|review|summary|report|tool|framework|service|architecture|experiment|feature|issue|refactor|release|fix|chore|doc|event|show|exhibit|book|movie|genre|history|concept|technique"
+standard_commit_types="feat|feature|fix|hotfix|build|refactor|docs|test|chore|style|perf|ci"
+
+# Get the commit message
+commit_msg=$(cat "$1")
+
+# Regex pattern to match the required format:
+# It supports <standard-type>: <message> and <category>:<file-type>: <message>
+regex="^(${standard_commit_types}): .+|^(${allowed_categories}):(${allowed_file_types}): .+"
+
+# Validate commit message against the regex
+if [[ ! $commit_msg =~ $regex ]]; then
+  echo -e "\nInvalid commit message format.\n"
+  echo "Use one of the following formats:"
+  echo "1. <standard-type>: <message>"
+  echo "   Examples: feat: add new login feature"
+  echo "             fix: correct user profile picture display bug"
+  echo "2. <category>:<file-type>: <message>"
+  echo "   Examples: ai:courses: neural nets in depth from blah blah"
+  echo "             music:album: exploring jazz classics"
+  echo "             web:feature: implemented dark mode"
+  exit 1  # Exit with failure status to prevent the commit
+fi
