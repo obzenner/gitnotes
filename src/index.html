@@ -2,12 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Git Notes Visualizer</title>
+  <title>Git Notes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Visualized Notes</h1>
-  <canvas id="notesCanvas" width="800" height="600"></canvas>
+  <div id="notesContainer"></div>
+
+  <!-- Template for each note -->
+  <template id="noteTemplate">
+    <div class="note-block">
+      <span class="file-type-tag"></span>
+      <h4 class="note-title"></h4>
+      <small class="note-date"></small>
+      <div class="note-content"></div>
+    </div>
+  </template>
+
+  <!-- Template for category section -->
+  <template id="categoryTemplate">
+    <section class="category-section">
+      <h2 class="category-header"></h2>
+      <div class="notes-list"></div>
+    </section>
+  </template>
+
   <script src="main.js"></script>
 </body>
 </html>

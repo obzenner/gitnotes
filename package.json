@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "prebuild": "node scripts/generateNotes.js",
-    "build": "echo 'Build complete'",
-    "start": "node scripts/generateNotes.js && live-server public"
+    "build": "node scripts/generateNotes.js && echo 'Build complete'",
+    "start": "npm run build && live-server src",
+    "setup-hooks": "chmod +x setup-hooks.sh && ./setup-hooks.sh"
   },
   "keywords": [],
   "author": "",
