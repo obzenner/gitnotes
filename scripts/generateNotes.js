@@ -16,7 +16,13 @@ function parseFilename(filename) {
 
   // Check if category and fileType are allowed
   if (!allowedCategories.includes(category) || !allowedFileTypes.includes(fileType)) {
-    console.log(util.format("Invalid category or file type: %s %s. Allowed categories: %s, Allowed file types: %s", category, fileType, allowedCategories.join(", "), allowedFileTypes.join(", ")));
+    console.log(util.format(
+      "Invalid category or file type: %s %s.\nAllowed categories: %s\nAllowed file types: %s",
+      category,
+      fileType,
+      allowedCategories.join(", "),
+      allowedFileTypes.join(", ")
+    ));
     return null;
   }
 
