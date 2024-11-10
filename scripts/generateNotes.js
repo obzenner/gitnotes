@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const chalk = require('chalk');
 
 // Load allowed categories and file types from JSON config
 const config = JSON.parse(fs.readFileSync("./scripts/commit-config.json", "utf-8"));
@@ -15,7 +16,12 @@ function parseFilename(filename) {
 
   // Check if category and fileType are allowed
   if (!allowedCategories.includes(category) || !allowedFileTypes.includes(fileType)) {
-    throw new Error(`Invalid category or file type: ${category} ${fileType}. Allowed categories: ${allowedCategories.join(", ")}, Allowed file types: ${allowedFileTypes.join(", ")}`);
+    console.error(chalk.red(`Invalid category or file type:`));
+    console.error(chalk.yellow(`Category: ${category}`));
+    console.error(chalk.yellow(`File Type: ${fileType}`));
+    console.error(chalk.green(`Allowed Categories: ${allowedCategories.join(", ")}`));
+    console.error(chalk.green(`Allowed File Types: ${allowedFileTypes.join(", ")}`));
+    throw new Error(`Invalid category or file type: ${category} ${fileType}`);
   }
 
   return { category, fileType, title };
