@@ -21,17 +21,17 @@
     "content": "# Building user interfaces in the age of AI (Perplexity)\n\n- [Building user interfaces in the age of AI](https://www.youtube.com/watch?v=dqVL7mdTrlA&t=1s)"
   },
   {
-    "date": "2024-11-11T10:30:02.330Z",
+    "date": "2024-11-11T10:32:46.541Z",
     "category": "programming",
     "fileType": "report",
     "title": "i-spent-18-months-using-rust-and-regret-it",
-    "content": "**Title:** I Spent 18 Months Using Rust And Regret It\n\n**Link:** [programming](https://www.youtube.com/watch?v=7ySVWcFHz98)\n\n## Content\n\nRecorded live on twitch, GET IN ### Articlehttps://medium.com/@austin-starks/i-spent-18-months-rebuilding-my-algorithmic-trading-in-rust-im-filled-with-regre…\n\n[i-spent-18-months-using-rust-and-regret-it](https://www.youtube.com/watch?v=7ySVWcFHz98)"
+    "content": "**Title:** I Spent 18 Months Using Rust And Regret It\n\n**Content:**\n\nRecorded live on twitch, GET IN ### Articlehttps://medium.com/@austin-starks/i-spent-18-months-rebuilding-my-algorithmic-trading-in-rust-im-filled-with-regre…\n\n[i-spent-18-months-using-rust-and-regret-it](https://www.youtube.com/watch?v=7ySVWcFHz98)"
   },
   {
-    "date": "2024-11-11T10:30:07.773Z",
+    "date": "2024-11-11T10:32:55.054Z",
     "category": "web",
     "fileType": "guides",
     "title": "http-caching---http-|-mdn",
-    "content": "**Title:** HTTP caching - HTTP | MDN\n\n**Link:** [web](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)\n\n## Content\n\nThe HTTP cache stores a response associated with a request and reuses the stored response for subsequent requests.\n\n[http-caching---http-|-mdn](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)"
+    "content": "**Title:** HTTP caching - HTTP | MDN\n\n**Content:**\n\nThe HTTP cache stores a response associated with a request and reuses the stored response for subsequent requests.\n\n[http-caching---http-|-mdn](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)"
   }
 ]
