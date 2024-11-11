@@ -67,11 +67,7 @@ async function createMarkdownFile(url, category, fileType) {
 
 **Link:** [${category}](${url})
 
-**Last Modified:** ${new Date().toLocaleDateString()}
-
----
-
-## Content
+**Content**
 
 ${metadata.description}
 
