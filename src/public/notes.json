@@ -1,5 +1,12 @@
 [
   {
+    "date": "2024-11-11T11:49:55.252Z",
+    "category": "academic",
+    "fileType": "research",
+    "title": "coinduction",
+    "content": "**Title:** Coinduction\n\n**Content:**\n\nCoinduction is the mathematical dual to an indispensible mathematical tool: induction. While mathematical induction has been known for thousands of years, coinduction has only been studied for a few decades. It is still primarily used in computer science, from which it originated in the field of concurrency theory. Coinduction allows us to define circular or infinite objects (such as streams, lists that can be infinitely long), and to prove things about them.\n\n[coinduction](https://paulhe.com/2019/04/17/coinduction.html)"
+  },
+  {
     "date": "2024-11-10T21:51:17.827Z",
     "category": "ai",
     "fileType": "courses",
