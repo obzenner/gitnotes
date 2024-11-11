@@ -34,7 +34,22 @@ The `src/commit-config.json` file contains the allowed categories and file types
 ```
 
 ## Workflow
+### Generator
 
+1. **Add Note**: Add a new note by creating a markdown file in the `src/md` directory with a commit message that includes a category and file type (i.e. `ai:courses:some-course.md`).
+2. **Generate Note**: Use the following command to generate a note:
+    ```bash
+    npm run md <url> <category> <filetype>
+    ```
+    Example:
+    ```bash
+    npm run md https://www.youtube.com/watch\?v\=7ySVWcFHz98 programming report
+    ```
+3. **Build or Start**: Run `npm run build` or `npm run start` to update the `public/notes.json` with the updated notes.
+4. **Commit and Push**: Commit the new note and push to the repository.
+5. **GitHub Actions**: The GitHub Actions workflow will run and deploy the updated notes to GitHub Pages.
+
+### Manual
 1. **Add Note**: Add a new note by creating a markdown file in the `src/md` directory with a commit message that includes a category and file type (i.e. ai:courses:some-course.md)
 2. Run `npm run build` or `npm run start` to update the `public/notes.json` with the updated notes.
 3. **Commit and Push**: Commit the new note and push to the repository.

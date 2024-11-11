@@ -130,6 +130,7 @@ h1 {
 .category-section.opensource { background-color: #2c3e50; }
 .category-section.edtech { background-color: #34495e; }
 .category-section.fintech { background-color: #1b2631; }
+.category-section.programming { background-color: #2c3e50; }
 
 /* General styling for filter container */
 #filterContainer {

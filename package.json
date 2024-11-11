@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "md": "node scripts/generateMdFile.js",
     "build": "node scripts/generateNotes.js && echo 'Build complete'",
     "start": "npm run build && live-server src",
     "setup-hooks": "chmod +x setup-hooks.sh && ./setup-hooks.sh"
@@ -13,5 +14,16 @@
   "description": "",
   "dependencies": {
     "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "jsdom": "^25.0.1",
+    "metascraper": "^5.45.25",
+    "metascraper-description": "^5.45.25",
+    "metascraper-image": "^5.45.25",
+    "metascraper-title": "^5.45.25",
+    "metascraper-url": "^5.45.25",
+    "openai": "^4.71.1"
   }
 }
