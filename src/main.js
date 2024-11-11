@@ -4,9 +4,6 @@ async function loadNotes() {
   const config = await configResponse.json();
   const availableCategories = config.allowedCategories;
 
-  // Clone and create filter container
-  createCategoryFilter(availableCategories);
-
   // Fetch notes data with cache-busting
   const timestamp = new Date().getTime();
   const response = await fetch(`public/notes.json?t=${timestamp}`);
@@ -21,13 +18,16 @@ async function loadNotes() {
       .replace(/\[(.+?)\]\((https?:\/\/[^\s]+)\)/g, '<a href="$2" target="_blank">$1</a>'); // Links
   }
 
-  // Group notes by category
-  const groupedNotes = commits.reduce((acc, commit) => {
-    const { category } = commit;
-    if (!acc[category]) acc[category] = [];
-    acc[category].push(commit);
-    return acc;
-  }, {});
+    // Group notes by category
+    const groupedNotes = commits.reduce((acc, commit) => {
+      const { category } = commit;
+      if (!acc[category]) acc[category] = [];
+      acc[category].push(commit);
+      return acc;
+    }, {});
+    
+    // Clone and create filter container
+    createCategoryFilter(availableCategories);
 
   // Render notes based on selected categories
   function renderNotes(selectedCategories) {
@@ -89,7 +89,7 @@ async function loadNotes() {
       const checkboxes = filterOptions.querySelectorAll("input[type='checkbox']");
       const allSelected = Array.from(checkboxes).every(checkbox => checkbox.checked);
       checkboxes.forEach(checkbox => checkbox.checked = !allSelected);
-      
+
       const selectedCategories = Array.from(
         filterOptions.querySelectorAll("input[type='checkbox']:checked")
       ).map(checkbox => checkbox.value);
@@ -102,6 +102,7 @@ async function loadNotes() {
 
     // Create checkboxes for each category
     categories.forEach((category) => {
+      if (groupedNotes[category] === undefined) return; // Skip categories with no notes
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.id = category;
