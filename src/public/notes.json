@@ -26,5 +26,12 @@
     "fileType": "report",
     "title": "i-spent-18-months-using-rust-and-regret-it",
     "content": "---\ndate: 2024-11-11T10:16:40.936Z\ncategory: programming\nfileType: report\ntitle: I Spent 18 Months Using Rust And Regret It\n---\n\n**Title:** I Spent 18 Months Using Rust And Regret It\n\n**Link:** [programming](https://www.youtube.com/watch?v=7ySVWcFHz98)\n\n**Last Modified:** 11/11/2024\n\n---\n\n## Content\n\nRecorded live on twitch, GET IN ### Articlehttps://medium.com/@austin-starks/i-spent-18-months-rebuilding-my-algorithmic-trading-in-rust-im-filled-with-regre…\n\n[i-spent-18-months-using-rust-and-regret-it](https://www.youtube.com/watch?v=7ySVWcFHz98)"
+  },
+  {
+    "date": "2024-11-11T10:25:19.185Z",
+    "category": "web",
+    "fileType": "guides",
+    "title": "http-caching---http-|-mdn",
+    "content": "---\ndate: 2024-11-11T10:25:19.149Z\ncategory: web\nfileType: guides\ntitle: HTTP caching - HTTP | MDN\n---\n\n**Title:** HTTP caching - HTTP | MDN\n\n**Link:** [web](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)\n\n**Last Modified:** 11/11/2024\n\n---\n\n## Content\n\nThe HTTP cache stores a response associated with a request and reuses the stored response for subsequent requests.\n\n[http-caching---http-|-mdn](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)"
   }
 ]
