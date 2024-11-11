@@ -7,8 +7,9 @@ async function loadNotes() {
   // Clone and create filter container
   createCategoryFilter(availableCategories);
 
-  // Fetch notes data
-  const response = await fetch("public/notes.json");
+  // Fetch notes data with cache-busting
+  const timestamp = new Date().getTime();
+  const response = await fetch(`public/notes.json?t=${timestamp}`);
   const commits = await response.json();
 
   // Function to convert basic Markdown to HTML
