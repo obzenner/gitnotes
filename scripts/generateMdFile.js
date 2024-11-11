@@ -63,13 +63,6 @@ async function createMarkdownFile(url, category, fileType) {
 
     // Prepare the markdown content
     const markdownContent = `
----
-date: ${new Date().toISOString()}
-category: ${category}
-fileType: ${fileType}
-title: ${metadata.title}
----
-
 **Title:** ${metadata.title}
 
 **Link:** [${category}](${url})

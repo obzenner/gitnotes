@@ -1,10 +1,3 @@
----
-date: 2024-11-11T10:16:40.936Z
-category: programming
-fileType: report
-title: I Spent 18 Months Using Rust And Regret It
----
-
 **Title:** I Spent 18 Months Using Rust And Regret It
 
 **Link:** [programming](https://www.youtube.com/watch?v=7ySVWcFHz98)
