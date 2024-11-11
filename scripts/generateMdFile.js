@@ -65,9 +65,7 @@ async function createMarkdownFile(url, category, fileType) {
     const markdownContent = `
 **Title:** ${metadata.title}
 
-**Link:** [${category}](${url})
-
-**Content**
+**Content:**
 
 ${metadata.description}
 
