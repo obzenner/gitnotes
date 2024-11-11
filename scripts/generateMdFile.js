@@ -70,10 +70,6 @@ fileType: ${fileType}
 title: ${metadata.title}
 ---
 
-# Report
-
-## ${metadata.title}
-
 **Title:** ${metadata.title}
 
 **Link:** [${category}](${url})
