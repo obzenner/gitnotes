@@ -1,13 +1,9 @@
 ---
-date: 2024-11-11T09:56:17.050Z
+date: 2024-11-11T10:16:40.936Z
 category: programming
 fileType: report
 title: I Spent 18 Months Using Rust And Regret It
 ---
-
-# Report
-
-## I Spent 18 Months Using Rust And Regret It
 
 **Title:** I Spent 18 Months Using Rust And Regret It
 
